@@ -7,26 +7,23 @@ import style from './Navigation.module.css';
  
 const Links = [
     {href: '/', label: 'Home'},
-    {href: '/blog', label: 'BlogII'},
+    {href: '/blog', label: 'Blog'},
     {href: '/contact', label: 'Contact'}
 ];
 export default function Navigation(){
     const pathname = usePathname()
 
     return (
-      <nav className="fixed h-full p-4 bg-opacity-50 backdrop-blur-lg">
-      <ul className="flex flex-col items-end space-y-4">
-        {Links.map(({ href, label }) => (
-          <li key={href}>
-            <Link
-              className={`text-white hover:text-blue-800 transition-colors duration-300 ${pathname === href ? style.active : ''}`}
-              href={href}
-            >
-              {label}
+      <nav className="flex justify-end bg-blue-950 p-4 text-white">
+        <ul className="flex items-center">
+            {Links.map(({ href, label }) => (      
+          <li className="mr-8 mb-1" key={href}>
+            <Link className={`${style.link} text-gray-400 hover:text-white ${pathname === href ? style.active : ''}`} href={href}>
+            {label}
             </Link>
           </li>
-        ))}
-      </ul>
-    </nav>    
+            ))}
+        </ul>
+      </nav>
     )
 }
