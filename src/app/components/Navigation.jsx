@@ -14,7 +14,7 @@ export default function Navigation(){
     const pathname = usePathname()
 
     return (
-      <nav className="flex justify-end bg-blue-950 p-4 text-white">
+      <nav className="flex justify-end bg-[#071952] p-4 text-white">
         <ul className="flex items-center">
             {Links.map(({ href, label }) => (      
           <li className="mr-8 mb-1" key={href}>
